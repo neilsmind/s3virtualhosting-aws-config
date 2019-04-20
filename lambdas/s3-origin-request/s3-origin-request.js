@@ -6,9 +6,9 @@ const getS3PathFromHeader = request => {
   return request.headers['s3-path'];
 };
 
-const rerouteRequest = reuqest => {
+const rerouteRequest = request => {
   console.log('Rerouting s3 request');
-  const s3PathHeader = getS3PathFromHeader(reuqest);
+  const s3PathHeader = getS3PathFromHeader(request);
   if (s3PathHeader) {
     const s3Folder = s3PathHeader[0].value;
     console.log('Folder: ', s3Folder);
